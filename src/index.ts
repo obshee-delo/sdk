@@ -21,36 +21,3 @@ export class Sdk {
 }
 
 export * from './adapter';
-
-
-// Инициализация
-
-export const sdk = new Sdk(
-    new ApiAdapter(
-        {
-            // конфиг соединения
-            // см. Connection в src/adapter
-        } as Connection,
-        {
-            // конфиг доступа
-            // см. Credentials в src/adapter
-        } as Credentials
-    )
-);
-
-// Модули:
-
-sdk.user;
-sdk.course;
-sdk.payment;
-
-// Примеры
-
-sdk.user.get({ id: 'id' });
-
-let receiptData; // fetch from somewhere
-sdk.payment.create({
-    userId: 'id',
-    courseName: 'history',
-    receipt: receiptData as any
-});
