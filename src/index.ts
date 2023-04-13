@@ -1,23 +1,4 @@
-import { ApiAdapter, Connection, Credentials } from "./adapter";
-import { CourseService } from "./modules/course";
-import { PaymentService } from "./modules/payments";
-import { UserService } from "./modules/user";
-
-
-export class Sdk {
-    private adapter: ApiAdapter;
-
-    public user: UserService;
-    public course: CourseService;
-    public payment: PaymentService;
-
-    constructor(adapter: ApiAdapter) {
-        this.adapter = adapter;
-
-        this.user = new UserService(adapter);
-        this.course = new CourseService(adapter);
-        this.payment = new PaymentService(adapter);
-    }
-}
-
+export * from './sdk';
 export * from './adapter';
+export * from './modules';
+export * from './service';
